@@ -1,6 +1,6 @@
 # Flight Buddy (A Prototype)
 
-A Node app built with MongoDB, Angular, AWS SNS and interfacing with Tesseract, OpenOCR Project (Team Om's API service). 
+A Node app built with MongoDB, Angular, AWS SNS and interfacing with Tesseract, OpenOCR Project. 
 
 Presently, Tesseract can recognise various types of images, pdf and text across 100+ languages.
 
