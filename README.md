@@ -3,7 +3,7 @@
 A Node app built with MongoDB, Angular, AWS SNS and interfacing with Tesseract, OpenOCR Project. 
 
 Presently, Tesseract can recognise various types of images, pdf and text across 100+ languages.
-
+(You will have to manually setup the tesseract API service)
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Presently, Tesseract can recognise various types of images, pdf and text across 
    Will look something like:  `http://localhost:8080/verified?phone={phone number}&otp={otp sent}` 
 6. OCR test images could be found in this respository.
 
-## Screenshots & Presentation Slides
+## Screenshots
 
 Screenshots are being stored inside `flightbuddy_screenshots` folder.
-Slides can be found inside `presentation_slides` folder.
+
