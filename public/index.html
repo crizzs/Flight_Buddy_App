@@ -1,0 +1,75 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="flightbuddy">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Om Flight Buddy</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="js/libs/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+	<script src="js/libs/ng-file-upload.min.js"></script>
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/smsSvc.js"></script>
+	<script src="js/services/flightSvc.js"></script>
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div id ="mainwindow" class="container">
+		<h1 align="center">Flight Buddy <span class="label label-info">Oṃ </span></h1><br>
+	
+		<div class="jumbotron text-center">
+			
+			<table align="center">
+			<tr>
+				<td align="left"><span class="glyphicon glyphicon-ok-circle"></span>  No App Download</td>
+			</tr>
+			<tr>
+				<td align="left"><span class="glyphicon glyphicon-ok-circle"></span>  Track Your Flights</td>
+			</tr>
+			<tr>
+				<td align="left"><span class="glyphicon glyphicon-ok-circle"></span>  Pre-flight Check-In</td>
+			</tr>
+			</table>
+		</div>
+
+		<div id="todo-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- Bind Phone Number TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="94895135" ng-model="formData.text">
+					</div>
+
+					<!--Verify phone number -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="verifyPhone()">Verify</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="text-center text-muted">
+			<p>Flight Buddy by Team Om! All rights reserved, 2017~Present.</p>
+			
+		</div>
+
+	</div>
+
+</body>
+</html>

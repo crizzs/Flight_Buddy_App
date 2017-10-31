@@ -1,0 +1,77 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="flightbuddy">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Add Flight</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+	</style>
+
+	<!-- Angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<!--ng upload-->
+	<script src="js/libs/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+	<script src="js/libs/ng-file-upload.min.js"></script>
+
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/smsSvc.js"></script>
+	<script src="js/services/flightSvc.js"></script>
+	<script src="js/core.js"></script> <!-- load our main application -->
+	<script type="text/javascript">
+	  var phone,otp;
+	  function findGetParameter(parameterName) {
+		    var result = null,
+		        tmp = [];
+		    location.search
+		        .substr(1)
+		        .split("&")
+		        .forEach(function (item) {
+		          tmp = item.split("=");
+		          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+		        });
+		    return result;
+	  }
+	  //Finding out user status (authorized or not)
+	  function onLoadFunctions() {
+	        phone = findGetParameter("phone");
+	        otp = findGetParameter("otp");
+	  }
+	  onLoadFunctions();
+	</script>
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController"  ng-init="authenticate();">
+	<div id ="mainwindow" class="container">
+		<h1 align="center">Add Flight<span class="label label-info">Oṃ </span></h1><br>
+
+		<div class="jumbotron text-center">
+			<form name="form">
+		    	<button type="button" class="btn btn-Info btn-lg btn-block active" ngf-select="upload($file)" accept="image/*" ngf-max-size="1MB">Select an image!
+	    		</button>
+	    	</form>
+		</div>
+		<div class="jumbotron text-center">
+			
+		<button type="button" class="btn btn-primary btn-lg btn-block active" ng-click="retrieveAllFlights();goToMyFlights();">Go Back</button>
+
+		</div>
+		<div class="text-center text-muted">
+			<p>Flight Buddy by Team Om! All rights reserved, 2017~Present.</p>
+			
+		</div>
+
+	</div>
+
+</body>
+</html>
